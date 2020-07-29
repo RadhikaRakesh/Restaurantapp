@@ -1,0 +1,26 @@
+<h3> Welcome </h3>
+    <h6>Pure veg Restaurent</h6>
+    <div class="main">
+    <div class="right">
+        <div class="row" >
+            <div class="col-sm-6" *ngFor='let item of items' >
+              <div class="card" >
+                <div class="card-body" >
+                  <h5 class="card-title">{{item.itemName}}</h5>
+                  <p class="card-text">Available :{{item.available}}<br>
+                    Price :{{item.price}}<br>
+                    Rating:{{item.starRating}}
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+               
+              
+    </div>
+    <div class="left">
+
+    </div>
+    </div>
+    

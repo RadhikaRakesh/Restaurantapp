@@ -1,0 +1,79 @@
+<div>
+  <img class="logo" src="https://png.pngtree.com/png-clipart/20200225/original/pngtree-logo-template-for-food-and-restaurant-master-chef-creative-symbol-concept-png-image_5255565.jpg">
+</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Users 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="nav-link" routerLink="/menu" routerLinkActive="active">Menu</a>
+            <a class="nav-link" routerLink="/special" routerLinkActive="active">Order</a>
+            <a class="nav-link" routerLink="/cart" routerLinkActive="active">Ordered Items</a>
+          </div>
+        </li>
+
+       <!-- <li class="nav-item active">
+          <a class="nav-link" routerLink="/menu" routerLinkActive="active">Menu</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/special" routerLinkActive="active">Order</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/cart" routerLinkActive="active">Ordered Items</a>
+        </li>-->
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" *ngIf="auths.isadmin()" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" exact:true>
+            Admin
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="nav-link" routerLink="/display" routerLinkActive="active">Menu List</a>
+            <a class="nav-link" routerLink="/new" routerLinkActive="active">Add Menu</a>
+           <!--<a class="nav-link" routerLink="/edit" routerLinkActive="active">Edit</a>-->
+            <a class="nav-link" routerLink="/orderlist" routerLinkActive="active">Orderlist</a>
+          </div>
+        </li>
+
+      <!--  <li class="nav-item active">
+          <a class="nav-link" routerLink="/display" routerLinkActive="active">Menu List</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/new" routerLinkActive="active">Add Menu</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/edit" routerLinkActive="active">Edit</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/orderlist" routerLinkActive="active">Orderlist</a>
+        </li>-->
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">ContactUs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" *ngIf="!auths.logged()" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" *ngIf="!auths.logged()" routerLinkActive="active">Register</a>
+        </li>
+       <li class="nav-item">
+         <a class="nav-link" style="cursor: pointer;" *ngIf="auths.logged()" (click)="logout()">LogOut</a>
+       </li>
+       
+      </ul>
+      
+    </div>
+  </nav>
+<router-outlet></router-outlet>
+  

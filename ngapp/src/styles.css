@@ -1,0 +1,29 @@
+
+body{
+    background-color: #ffd662ff;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: center;
+    margin-top: 100px;
+}
+.left{
+    background-image: url("https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2017/10/Dosa-Ghee-Roast.jpg");
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+}
+.right{
+
+    width: 60%;
+    height: max-content;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    
+}

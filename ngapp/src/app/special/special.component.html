@@ -1,0 +1,25 @@
+    <div class="main">
+    <div class="right">
+        <div class="row">
+            <div class="col-sm-6" *ngFor='let item of items' >
+              <div class="card">
+                <div class="card-body" >
+                  <h5 class="card-title">{{item.itemName}}</h5>
+                  <p class="card-text">
+                    Available :{{item.available}}<br>
+                    Price :{{item.price}}<br>
+                    Qunantity:{{item.quantity}}<br>
+                    Rating:{{item.starRating}}
+                  </p>
+                  <button  class="btn btn-primary" (click)="addtocart(item._id)">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="left">
+
+    </div>
+    </div>
+    

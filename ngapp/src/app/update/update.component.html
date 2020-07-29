@@ -1,0 +1,86 @@
+<p>update works!</p>
+<div class="main">
+
+    <div class=right>
+    <div class="card">
+        <div class="card-header">
+        Edit Menu
+        </div>
+        <form class="form" [formGroup]="editform" (ngSubmit)="updateitem()" >
+        <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+            <tr> <div class="form-group">
+                <td>
+                    <label for="Name">Item Name</label>
+                </td>
+                <td>
+                    <input name="itemName" type="text" [(ngModel)]="items.itemName" [class.is-invalid]="editform.get('itemName').invalid && editform.get('itemName').touched" formControlName="itemName" class="form-control rounded-0" name='itemName' required >
+                </td></div>
+                <div *ngIf="editform.get('itemName').invalid && editform.get('itemName').touched">
+                    <small *ngIf="editform.get('itemName').errors?.required" class="text-danger">Enter Item Name</small>
+                               
+                </div>
+            </tr>
+            <tr> <div class="form-group">
+                <td>
+                    <label for="Code">Item Code</label>
+                </td>
+                <td>
+                    <input name="itemVode" type="text" [(ngModel)]="items.itemCode" [class.is-invalid]="editform.get('itemCode').invalid && editform.get('itemCode').touched" formControlName="itemCode" class="form-control rounded-0" name='itemCode' required >
+                </td></div>
+                <div *ngIf="editform.get('itemCode').invalid && editform.get('itemCode').touched">
+                    <small *ngIf="editform.get('itemCode').errors?.required" class="text-danger">Enter Item Code</small>
+                               
+                </div>
+            </tr>
+           
+            <tr> <div class="form-group">
+                <td>
+                    <label for="Price">Item Price</label>
+                </td>
+                <td>
+                    <input name="price" type="text" [(ngModel)]="items.price" [class.is-invalid]="editform.get('price').invalid && editform.get('price').touched" formControlName="price" class="form-control rounded-0" name='price' required >
+                </td></div>
+                <div *ngIf="editform.get('price').invalid && editform.get('price').touched">
+                    <small *ngIf="editform.get('price').errors?.required" class="text-danger">Enter Item Price</small>
+                               
+                </div>
+            </tr>
+            <tr> <div class="form-group">
+                <td>
+                    <label for="Available">Item Avaliable</label>
+                </td>
+                <td>
+                    <input name="available" type="text" [(ngModel)]="items.available" [class.is-invalid]="editform.get('available').invalid && editform.get('available').touched" formControlName="available" class="form-control rounded-0" name='available' required >
+                </td></div>
+                <div *ngIf="editform.get('available').invalid && editform.get('available').touched">
+                    <small *ngIf="editform.get('available').errors?.required" class="text-danger">Enter Item Available or not</small>
+                               
+                </div>
+            </tr>
+            <tr> <div class="form-group">
+                <td>
+                    <label for="rating">Item Rating</label>
+                </td>
+                <td>
+                    <input name="starRating" type="text" [(ngModel)]="items.starRating" [class.is-invalid]="editform.get('starRating').invalid && editform.get('starRating').touched" formControlName="starRating" class="form-control rounded-0" name='starRating' required >
+                </td></div>
+                <div *ngIf="editform.get('starRating').invalid && editform.get('starRating').touched">
+                    <small *ngIf="editform.get('starRating').errors?.required" class="text-danger">Enter Item Rating</small>
+                               
+                </div>
+            </tr>
+            <tr>
+                <td>
+                     <input type="submit" [disabled]="editform.invalid" value="Submit" class="btn btn-success" >
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    <div class="left"></div>
+    </div>

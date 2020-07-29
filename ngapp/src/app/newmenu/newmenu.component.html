@@ -1,0 +1,91 @@
+<div class="main">
+
+    <div class=right>
+    <div class="card">
+        <div class="card-header">
+          Add  New Menu
+        </div>
+        <form class="form" [formGroup]='addform' (ngSubmit)="additem()" >
+        <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                
+            <tr>
+                <div class="form-group">
+                <td>
+                    <label for="Name">Item Name</label>
+                </td>
+                <td>
+                    <input name="itemName" type="text" [(ngModel)]="item.itemName" [class.is-invalid]="addform.get('itemName').invalid && addform.get('itemName').touched" formControlName="itemName" class="form-control rounded-0" name='itemNname' required >
+                </td></div>
+                <div *ngIf="addform.get('itemName').invalid && addform.get('itemName').touched">
+                    <small *ngIf="addform.get('itemName').errors?.required" class="text-danger">Enter Item Name</small>
+                               
+                </div>
+
+            </tr>
+            
+            <tr><div class="form-group">
+                <td>
+                    <label for="Code">Item Code</label>
+                </td>
+                <td>
+                    <input name="itemCode" type="text" [(ngModel)]="item.itemCode" [class.is-invalid]="addform.get('itemCode').invalid && addform.get('itemCode').touched" formControlName="itemCode" class="form-control rounded-0" name='itemCode' required >
+                </td></div>
+                <div *ngIf="addform.get('itemCode').invalid && addform.get('itemCode').touched">
+                    <small *ngIf="addform.get('itemCode').errors?.required" class="text-danger">Enter Item Code</small>
+                               
+                </div>
+
+            </tr>
+           
+            <tr><div class="form-group">
+                <td>
+                    <label for="Price">Item Price</label>
+                </td>
+                <td>
+                    <input name="price" type="number" [(ngModel)]="item.price" [class.is-invalid]="addform.get('price').invalid && addform.get('price').touched" formControlName="price" class="form-control rounded-0" name='price' required >
+                </td></div>
+                <div *ngIf="addform.get('price').invalid && addform.get('price').touched">
+                    <small *ngIf="addform.get('price').errors?.required" class="text-danger">Enter Item Price</small>
+                               
+                </div>
+
+            </tr>
+            <tr><div class="form-group">
+                <td>
+                    <label for="Available">Item Avaliable</label>
+                </td>
+                <td>
+                    <input name="available" type="text" [(ngModel)]="item.available" [class.is-invalid]="addform.get('available').invalid && addform.get('available').touched" formControlName="available" class="form-control rounded-0" name='available' required >
+                </td></div>
+                <div *ngIf="addform.get('available').invalid && addform.get('available').touched">
+                    <small *ngIf="addform.get('available').errors?.required" class="text-danger">Enter Item available or not</small>
+                               
+                </div>
+            </tr>
+            <tr><div class="form-group">
+                <td>
+                    <label for="rating">Item Rating</label>
+                </td>
+                <td>
+                    <input name="starRating" type="number" [(ngModel)]="item.starRating" [class.is-invalid]="addform.get('starRating').invalid && addform.get('starRating').touched" formControlName="starRating" class="form-control rounded-0" name='starRating' required >
+                </td></div>
+                <div *ngIf="addform.get('starRating').invalid && addform.get('starRating').touched">
+                    <small *ngIf="addform.get('starRating').errors?.required" class="text-danger">Enter Item Rating</small>
+                               
+                </div>
+            </tr>
+            <tr>
+                <td>
+                     <input type="submit" value="Submit" [disabled]="addform.invalid" class="btn btn-success" >
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    <div class="left"></div>
+    </div>

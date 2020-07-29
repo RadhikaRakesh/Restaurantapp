@@ -1,0 +1,85 @@
+<p>Order form works</p>
+
+<div class="main">
+
+    <div class=right>
+    <div class="card">
+        <div class="card-header">
+          Add Order
+        </div>
+        <form  class="form" [formGroup]="orderform" (ngSubmit)="addorder()" >
+        <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+            <tr><div class="form-group">
+                <td>
+                    <label for="Name">Item Name</label>
+                </td>
+                <td>
+                    <input name="itemName" type="text" [(ngModel)]="order.itemName" formControlName="itemName" readonly >
+                </td></div>
+            </tr>
+            <tr><div class="form-group">
+                <td>
+                    <label for="Code">Item Code</label>
+                </td>
+                <td>
+                    <input name="itemCode" type="text" [(ngModel)]="order.itemCode" formControlName="itemCode" readonly >
+                </td></div>
+            </tr>
+           
+            <tr><div class="form-group">
+                <td>
+                    <label for="unitPrice">Item Price</label>
+                </td>
+                <td>
+                    <input name="unitPrice" type="number" [(ngModel)]="order.unitPrice" formControlName="unitPrice" readonly >
+                </td></div>
+            </tr>
+            <tr><div class="form-group">
+                <td>
+                    <label for="Quantity">Item Quantity</label>
+                </td>
+                <td>
+                    <input name="quantity" type="text" [(ngModel)]="order.quantity"  [class.is-invalid]="orderform.get('quantity').invalid && orderform.get('quantity').touched" formControlName="quantity" class="form-control rounded-0" name='quantity' required >
+                </td></div>
+                <div *ngIf="orderform.get('quantity').invalid && orderform.get('quantity').touched">
+                    <small *ngIf="orderform.get('quantity').errors?.required" class="text-danger">Enter Item quantity</small>
+                               
+                </div>
+            </tr>
+            <tr><div class="form-group">
+                <td>
+                    <label for="Username">User Name</label>
+                </td>
+                <td>
+                    <input name="username" type="text" [(ngModel)]="order.userName"  formControlName="userName" class="form-control rounded-0" name='userName' readonly >
+                </td></div>
+                
+            </tr>
+           <!-- <tr><div class="form-group">
+                <td>
+                    <label for="Date">Order Date</label>
+                </td>
+                <td>
+                    <input name="orderDate" type="date" [(ngModel)]="order.orderDate"  [class.is-invalid]="orderform.get('orderDate').invalid " formControlName="orderDate" class="form-control rounded-0" name='orderDate' required >
+                </td></div>
+                <div *ngIf="orderform.get('quantity').invalid && orderform.get('quantity').touched">
+                   <small *ngIf="orderform.get('orderDate').errors?.required" class="text-danger">Enter Item Rating</small>
+                           
+                </div>
+            </tr>
+        -->
+            <tr>
+                <td>
+                     <input type="submit" [disabled]="orderform.invalid" value="Submit" class="btn btn-success" >
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    <div class="left"></div>
+    </div>

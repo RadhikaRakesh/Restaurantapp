@@ -1,0 +1,38 @@
+<div class="main">
+
+    <div class=right>
+    <div class="card">
+        <div class="card-header">
+          Order list
+        </div>
+        <div class="table-responsive" style="overflow: auto;">
+            <table class="table">
+                <thead><tr>
+                    <th>Item</th>
+                    <th>Code</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Username</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor='let order of orders'>
+            
+                    <td> {{order.itemName}}</td>
+                    <td>{{order.itemCode}}</td>
+                    <td>{{order.orderDate|date:'dd MM yy'}}</td>
+                    <td>{{order.unitPrice}}</td>
+                    <td>{{order.quantity}}</td>
+                    <td>{{order.userName}}</td>
+                    <td>{{order.unitPrice*order.quantity}}</td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+    <div class="left"></div>
+    </div>
